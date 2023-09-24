@@ -1,0 +1,194 @@
+:root{
+  --green_teal: hsl(166, 100%, 37%);
+}
+@font-face {
+  font-family: 'HankenB';
+  src: url(/assets/fonts/static/HankenGrotesk-Bold.ttf);
+}
+@font-face {
+  font-family: 'HankenEB';
+  src: url(/assets/fonts/static/HankenGrotesk-ExtraBold.ttf);
+}
+@font-face {
+  font-family: 'HankenM';
+  src: url(/assets/fonts/static/HankenGrotesk-Medium.ttf);
+}
+@font-face {
+  font-family: 'Hanken';
+  src: url(/assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'HankenB';
+}
+body{
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.main{
+  position: relative;
+  width: 80%;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 05px gray;
+}
+.main .excla{
+  position: relative;
+  width: 15px;
+  height: 15px;
+  left: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--green_teal);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: inset 0 0 3px  grey;
+  cursor: pointer;
+  outline: none;
+  transition: .5s ease-in;
+}
+.excla:hover{
+  background: var(--green_teal);
+  color: white;
+  box-shadow: 0 0 3px  grey;
+}
+.main .about{
+  position: absolute;
+  width: 220px;
+  background: white;
+  color: gray;
+  border-radius: 5px;
+  padding: 7px;
+  box-shadow: 0 0 5px var(--green_teal);
+  right: 20px;
+  z-index: 1;
+  opacity: 0;
+  transition: .5s ease-in-out;
+  display: none;
+}
+.main h2{
+  position: relative;
+  left: 0;
+  opacity: 0;
+  text-align: center;
+  user-select: none;
+  animation: r-animate 1s ease-in-out;
+  animation-delay: .3s;
+  animation-fill-mode: forwards;
+}
+.main .bash{
+  position: relative;
+  opacity: 0;
+  left: 0;
+  font-size: 2.3rem;
+  color: var(--green_teal);
+  animation: animate 1s ease-in-out;
+  animation-delay: .3s;
+  animation-fill-mode: forwards;
+}
+.main .inputs{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding-block: 10px;
+}
+.inputs input{
+  height: 40px;
+  width: 80%;
+  padding-inline-start: 10px;
+  border: none;
+  box-shadow: inset 0 0 5px hsla(166, 100%, 37%, 0.5);
+  border-radius: 5px;
+  outline: none;
+}
+.inputs button{
+  height: 40px;
+  width: 20%;
+  color: white;
+  font-weight: 800;
+  border: none;
+  border-radius: 5px;
+  background: var(--green_teal);
+  box-shadow:  0 0 5px  grey;
+  transition: .5s ease-in
+}
+button:hover{
+  background: white;
+  color: var(--green_teal);
+  box-shadow:  0 0 5px  var(--green_teal);
+}
+.ciphered{
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 50px;
+  word-wrap: break-word;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 3px  grey;
+  color: gray;
+}
+@keyframes animate{
+  0%{
+    left: -80px;
+    opacity: 0;
+  }
+  100%{
+    left : 0;
+    opacity: 1;
+  }
+}
+@keyframes r-animate{
+  0%{
+    left: 50px;
+    opacity: 0;
+  }
+  100%{
+    left : 0;
+    opacity: 1;
+  }
+}
+@media (Min-width: 900px) {
+  .main{
+    display: flex;
+    width: 60%;
+    gap: 30px;
+  }
+  .main .ins{
+    width: 100%;
+  }
+  .main .excla{
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+  }
+  .main .about{
+    right: 53%;
+  }
+  .main .inputs{
+    flex-direction: column;
+    gap: 15px;
+  }
+  .inputs button,
+  .inputs input{
+    width: 100%;
+    height: 60px;
+  }
+  .inputs input{
+    font-size: 1.3rem;
+  }
+  .inputs button{
+    font-size: 1.5rem;
+  }
+  .ciphered{
+    width: 100%;
+  }
+}
